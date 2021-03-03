@@ -35,7 +35,8 @@
 
 }
 
-.her{
+.header_wrapper,
+.footer_wrapper{
     display: flex;
 }
 
