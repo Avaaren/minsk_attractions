@@ -20,7 +20,7 @@
             <div class="nav_item">Парки</div>
             <div class="nav_item">Архитектура</div>
             <div class="nav_item">Заведения</div>
-            <div class="nav_item">Войти</div>
+            <div class="nav_item"><a href="/minsk_attractions/backend/authPage.php">Войти</a></div>
         </div>
     </div>
 </header>
