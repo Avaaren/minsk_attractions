@@ -80,4 +80,11 @@
     flex-wrap: wrap;
 }
 
+/*Временный костыль*/
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
 
