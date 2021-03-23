@@ -19,12 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6abb092-4cc1-4d40-bf67-88bbe41f481a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cardPage/images/1-60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cardPage/images/msq_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cardPage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainPage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage/index.html" afterDir="false" />
+    <list default="true" id="0e5d565a-bee8-4cec-a74e-7112bc5688fa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/authPage/images/1-60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/authPage/images/msq_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/authPage/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/authPage/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/1-60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/msq_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/registrPage/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/.idea/assets.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +40,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1phoJGHYHbXYZl9Sczs4EwAU3Wp" />
+  <component name="ProjectId" id="1q9JnMEUn0ebUAJ7eZYeng6jm0L" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,29 +51,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/css" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/css" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/css" />
-      <recent name="$PROJECT_DIR$/cardPage" />
+      <recent name="$PROJECT_DIR$/assets/css" />
+      <recent name="$PROJECT_DIR$/assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c6abb092-4cc1-4d40-bf67-88bbe41f481a" name="Default Changelist" comment="" />
-      <created>1615644609227</created>
+      <changelist id="0e5d565a-bee8-4cec-a74e-7112bc5688fa" name="Default Changelist" comment="" />
+      <created>1616486037617</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615644609227</updated>
-      <workItem from="1615644610260" duration="3439000" />
+      <updated>1616486037617</updated>
+      <workItem from="1616486038746" duration="600000" />
     </task>
     <servers />
   </component>
