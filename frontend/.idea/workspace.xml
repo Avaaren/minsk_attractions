@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e5d565a-bee8-4cec-a74e-7112bc5688fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/authPage/images/1-60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/authPage/images/msq_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/authPage/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/authPage/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/css/auth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/1-60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/msq_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/registrPage/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/registrPage/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/.idea/assets.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/.idea/workspace.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../backend/services/db_layer/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/services/db_layer/db_query_builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/services/db_layer/db_query_builder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/css" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -67,7 +59,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616486037617</updated>
-      <workItem from="1616486038746" duration="600000" />
+      <workItem from="1616486038746" duration="1518000" />
     </task>
     <servers />
   </component>
