@@ -1,9 +1,15 @@
 <?php
 namespace Auth;
+require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
 
-class BaseAuthClass{
+class AuthClass{
     
     public $errors = [];
+    public $dbCnnection;
+
+    function __construct(){
+        $this->dbConnection = new \DB_Access();
+    }
 
     public static $dataArray = [
         0 => [
@@ -18,6 +24,8 @@ class BaseAuthClass{
         ], 
     ];
 
+
+
     public static function clearRequest(){
         $cleanedData = [];
         foreach ($_POST as $name => $field){
@@ -30,40 +38,7 @@ class BaseAuthClass{
         $this->errors[] = "Empty request";
     }
 
-    public static function checkUserIsset($login){
-        
-        foreach(self::$dataArray as $key => $item){
-            if ($item['login'] === $login){
-                return $key;
-            }
-        }
-
-        return null;
-        // Когда подключу бд на серв, сделать обратно id/false. Щас проблема, если $key = 0
-    }
-
     public static function displayErrors($errors){
         return;
-    }
-}
-
-class Login extends BaseAuthClass{
-
-    public static function loginRequestHandler(){
-
-        $cleanedData = parent::clearRequest($_POST);
-
-        $isUserIsset = parent::checkUserIsset($cleanedData['login']);
-
-        if ($isUserIsset !== null){
-            echo "hello";
-        }
-        else{
-            echo "no";
-        }
-    }
-
-    public static function loginUser($userId, $login){
-
     }
 }
