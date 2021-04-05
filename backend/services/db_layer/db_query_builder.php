@@ -10,11 +10,11 @@ class DB_Access {
         $this->database = $database;
         $this->user = $user;
         $this->password = $password;
-        $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->database);
+        $this->connection = new mysqli($this->host, $this->user, $this->password, $this->database);
     }
 
     public function closeConnection(){
-        mysqli_close($this->connection);
+        $this->connection->close();
     }
 
     public static function buildCreateQuery($data, $table, $insertingColumns = null){
@@ -54,11 +54,17 @@ class DB_Access {
     }
 
     public function query($queryString){
-        $result = mysqli_query($this->connection, "SELECT * FROM post");
+        $result = $this->connection->query($queryString);
         return $result;
     }
 
     public function fetchArray($dbResult){
-        
+        $resultArray = [];
+        if ($dbResult->num_rows > 0) {
+            while($row = $dbResult->fetch_assoc()) {
+                $resultArray[] = $row;
+            }
+        }
+        return $resultArray;
     }
 }
