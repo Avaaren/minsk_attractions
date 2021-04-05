@@ -1,0 +1,164 @@
+.w{
+    margin: 0 auto;
+    background-color: antiquewhite;
+    width: 1833px;
+    height: 655px;
+    display: flex;
+}
+
+.h{
+    margin: 0 auto;
+    padding-top: 52.5px;
+    width: 1296px;
+    height: 560.86px;
+}
+
+.header_container {
+    margin: 0 auto;
+    background-color: #E5C8A5;
+    width: 1833px;
+    height: 126px;
+    display: flex;
+}
+
+.slider_container {
+    margin: 0 auto;
+    background-color: antiquewhite;
+    width: 1833px;
+    height: 655px;
+    display: flex;
+}
+
+.cards_container {
+    margin: 0 auto;
+    background-color: bisque;
+    width: 1833px;
+    height: 1478px;
+    display: flex;
+}
+
+.footer_container {
+    margin: 0 auto;
+    background-color: #E5C8A5;
+    width: 1833px;
+    height: 126px;
+    display: flex;
+}
+
+.logO {
+    font-size: 35px;
+
+}
+
+.header_wrapper,
+.footer_wrapper {
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 1700px;
+    padding-top: 63px;
+}
+
+.nav_item {
+    font-size: 18px;
+}
+
+.slider_wrapper {
+    margin: 0 auto;
+    padding-top: 52.5px;
+    width: 1296px;
+    height: 560.86px;
+}
+
+.l {
+    width: 1296px;
+    height: 560.86px;
+}
+
+.card {
+    height: 20rem;
+    margin-top: 30px;
+}
+
+.chech {
+    width: 1296px;
+    margin: 0 auto;
+    padding-top: 111px;
+}
+
+.cards_wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.showplace_info_container {
+    margin: 0 auto;
+    background-color: bisque;
+    width: 1833px;
+    height: 1300px;
+    display: flex;
+
+}
+
+.showplace_wrapper {
+    margin: 0 auto;
+    padding-top: 52.5px;
+    width: 1296px;
+    height: 560.86px;
+}
+
+.showplace_img_container {
+    display: flex;
+    justify-content: center;
+}
+
+.showplace_img {
+    width: 1000px;
+    height: 540px;
+}
+
+.showplace_header {
+    margin-bottom: 60px;
+    font-weight: bold;
+}
+
+.showplace_text {
+    margin-top: 60px;
+}
+
+.comment_wrapper{
+}
+
+.comment-item{
+    background-color: #ffff;
+    border-radius: 20px;
+    margin-top: 25px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.comment-img{
+    width: 50px;
+    height: 50px;
+    margin: 5px 10px;
+}
+
+.comment-text{
+    margin-top: 18px;
+}
+
+/*Временный костыль*/
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+

@@ -2,7 +2,18 @@
 ini_set('error_reporting', E_ALL);
 // phpinfo();
 require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/header/header.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
 ?>
+
+<?
+$db = new DB_Access();
+
+$queryString= $db->buildSelectQuery('post', '*');
+$res = $db->query($queryString);
+$articles = $db->fetchArray($res);
+?>
+
+
 <div class="slider_container">
     <div class="slider_wrapper">
         <div class="container">
@@ -33,114 +44,23 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/header/header
 <div class="cards_container">
     <div class="chech">
         <div class="cards_wrapper">
+        <? foreach($articles as $article): ?>
             <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
+                <?if ($article['Image'] != ''):?>
+                    <img src="<?= $article['Image'] ?>" class="card-img-top" alt="...">
+                <?else:?>
+                    <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
+                <?endif;?>
+                
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title"><?=$article["Title"]?></h5>
+                    <p class="card-text">
+                        <?=$article["Text"]?>
+                    </p>
+                    <a href="<?=$article["Url"]?>" class="btn btn-primary">Перейти к статье</a>
                 </div>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="//minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/minsk_attractions/frontend/assets/mainPage/images/msq_2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+        <?endforeach;?>
         </div>
     </div>
 </div>
