@@ -5,26 +5,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_l
 class AuthClass{
     
     public $errors = [];
-    public $dbCnnection;
+    public $dbConnection;
 
     function __construct(){
         $this->dbConnection = new \DB_Access();
     }
-
-    public static $dataArray = [
-        0 => [
-            'login' => 'admin',
-            'password' => '123',
-            'email' => 'admin@mail.ru'
-        ], 
-        1 => [
-            'login' => 'not-admin',
-            'password' => '123',
-            'email' => 'not-admin@mail.ru'
-        ], 
-    ];
-
-
 
     public static function clearRequest(){
         $cleanedData = [];
@@ -38,7 +23,25 @@ class AuthClass{
         $this->errors[] = "Empty request";
     }
 
-    public static function displayErrors($errors){
-        return;
+    function checkUserIsset($login){
+        $connection = new \DB_Access();
+        $queryString = $connection->buildSelectQuery('user', 'Id', "Login = '$login'");
+        $dbResult = $connection->query($queryString);
+        $connection->closeConnection();
+        if ($dbResult->num_rows > 0){
+            return true;
+        }
+        return false;
+    }
+
+    function isAuthorized(){
+        if ($_SESSION["is_auth"] == true){
+            return true;
+        }
+        return false;
+    }
+
+    public static function getErrors(){
+        return $this->errors;
     }
 }

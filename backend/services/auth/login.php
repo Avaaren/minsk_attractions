@@ -1,26 +1,45 @@
 <?php
 ini_set('display_errors',1);
 ini_set('error_reporting', E_ALL);
-
 require_once 'AuthClass.php';
+require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
 
-class Login extends AuthClass{
+class Login extends Auth\AuthClass {
 
     public static function loginRequestHandler(){
-
         $cleanedData = parent::clearRequest($_POST);
-
         $isUserIsset = parent::checkUserIsset($cleanedData['login']);
 
-        if ($isUserIsset !== null){
-            echo "hello";
+        if ( !$isUserIsset ){
+            $this->errors[] = 'Такого пользователя не существует';
+            return false;
         }
-        else{
-            echo "no";
+
+        if ( $this->checkUserCredentials($cleanedData['login'], $cleanedData['password']) ){
+            $this->loginUser($cleanedData['login']);
         }
     }
 
-    public static function loginUser($userId, $login){
+    public static function loginUser($login){
+        $_SESSION['is_auth'] = true;
+        $_SESSION['username'] = $login;
+    }
+    
+    public static function checkUserCredentials($login, $password){
+        $connection = new \DB_Access();
 
+        $queryString = $connection->buildSelectQuery("user", "Id, Login, Password", "Login = $login");
+        $dbResult = $connection->query($queryString);
+        
+        $dbArray = $connection->fetchArray($dbResult);
+        $isAccessAccepted = password_verify($password, $dbArray[0]['Password']);
+        if ( $isAccessAccepted ) {
+            return true;
+        }
+        else {
+            $this->errors[] = 'Пароли не совпадают';
+            return false;
+        }
+        $connection->closeConnection();
     }
 }

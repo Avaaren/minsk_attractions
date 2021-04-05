@@ -28,24 +28,11 @@ class Registration extends Auth\AuthClass{
         $dbResult = $connection->query($queryString);
 
         $connection->closeConnection();
-        print_r($queryString);
-        print_r($dbResult);
-    }
-
-    function checkUserIsset($login){
-        $connection = new \DB_Access();
-        $queryString = $connection->buildSelectQuery('user', 'Id', "Login = '$login'");
-        $dbResult = $connection->query($queryString);
-        $connection->closeConnection();
-        if ($dbResult->num_rows > 0){
-            return true;
-        }
-        return false;
     }
 
     function handleReistration(){
         $cleanedData = parent::clearRequest();
-        if ($this->checkUserIsset($cleanedData['login'])){
+        if (parent::checkUserIsset($cleanedData['login'])){
             $this->errors[] = "Такой пользователь уже существует";
         }
         if ($cleanedData["password"] === $cleanedData["repeatPassword"]){
