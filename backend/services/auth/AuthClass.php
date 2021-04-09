@@ -23,7 +23,7 @@ class AuthClass{
         $this->errors[] = "Empty request";
     }
 
-    function checkUserIsset($login){
+    public static function checkUserIsset($login){
         $connection = new \DB_Access();
         $queryString = $connection->buildSelectQuery('user', 'Id', "Login = '$login'");
         $dbResult = $connection->query($queryString);
@@ -34,7 +34,7 @@ class AuthClass{
         return false;
     }
 
-    function isAuthorized(){
+    public static function isAuthorized(){
         if ($_SESSION["is_auth"] == true){
             return true;
         }

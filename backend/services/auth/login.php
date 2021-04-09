@@ -6,7 +6,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_l
 
 class Login extends Auth\AuthClass {
 
-    public static function loginRequestHandler(){
+    function loginRequestHandler(){
         $cleanedData = parent::clearRequest($_POST);
         $isUserIsset = parent::checkUserIsset($cleanedData['login']);
 
@@ -20,17 +20,16 @@ class Login extends Auth\AuthClass {
         }
     }
 
-    public static function loginUser($login){
+    function loginUser($login){
         $_SESSION['is_auth'] = true;
         $_SESSION['username'] = $login;
     }
     
-    public static function checkUserCredentials($login, $password){
+    function checkUserCredentials($login, $password){
         $connection = new \DB_Access();
 
-        $queryString = $connection->buildSelectQuery("user", "Id, Login, Password", "Login = $login");
+        $queryString = $connection->buildSelectQuery("user", "Id, Login, Password", "Login = '$login'");
         $dbResult = $connection->query($queryString);
-        
         $dbArray = $connection->fetchArray($dbResult);
         $isAccessAccepted = password_verify($password, $dbArray[0]['Password']);
         if ( $isAccessAccepted ) {

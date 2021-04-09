@@ -23,7 +23,7 @@ session_start();
             <div class="nav_item">Парки</div>
             <div class="nav_item">Архитектура</div>
             <div class="nav_item">Заведения</div>
-            <div class="nav_item"><a href="/minsk_attractions/backend/authPage.php">Войти</a></div>
+            <div class="nav_item"><a href="/minsk_attractions/backend/public/auth/login.php"><?= ($_SESSION['is_auth']) ? $_SESSION['is_auth'] : 'Войти' ?></a></div>
         </div>
     </div>
 </header>
