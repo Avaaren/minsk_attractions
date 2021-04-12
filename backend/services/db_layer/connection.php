@@ -1,6 +1,9 @@
 <?php
-$host = 'localhost'; 
-$database = 'post'; 
-$user = '***'; 
-$password = '***';
-?>
+namespace Connection;
+
+class ConnectionData {
+    const host = 'localhost'; 
+    const database = '*'; 
+    const user = '*'; 
+    const password = '*';
+}

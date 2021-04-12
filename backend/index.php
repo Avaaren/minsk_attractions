@@ -1,12 +1,11 @@
 <?php
 ini_set('error_reporting', E_ALL);
-// phpinfo();
 require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/header/header.php');
 require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
 ?>
 
 <?
-$db = new DB_Access();
+$db = new \DB_Access();
 
 $queryString= $db->buildSelectQuery('post', '*');
 $res = $db->query($queryString);

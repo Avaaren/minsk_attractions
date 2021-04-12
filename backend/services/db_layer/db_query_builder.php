@@ -6,10 +6,10 @@ class DB_Access {
 
     function __construct(){
         require_once 'connection.php';
-        $this->host = $host;
-        $this->database = $database;
-        $this->user = $user;
-        $this->password = $password;
+        $this->host = \Connection\ConnectionData::host;
+        $this->database = \Connection\ConnectionData::database;
+        $this->user = \Connection\ConnectionData::user;
+        $this->password = \Connection\ConnectionData::password;
         $this->connection = new mysqli($this->host, $this->user, $this->password, $this->database);
     }
 
@@ -17,9 +17,16 @@ class DB_Access {
         $this->connection->close();
     }
 
-    public static function buildCreateQuery($data, $table, $insertingColumns = null){
+    public static function buildCreateQuery($data, $table){
         $queryString = '';
-
+        
+        $columnString = implode(',', array_keys($data));
+        $values = array_values($data);
+        foreach ($values as &$value){
+            $value = "'".$value."'";
+        }
+        $valuesString = implode(',', $values);
+        $queryString = "INSERT INTO $table ($columnString) VALUES ($valuesString);";
         return $queryString;
     }
     // update $table set data(key) = data(value) where $condition
