@@ -1,6 +1,6 @@
 <?php
 namespace Auth;
-require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/services/db_layer/db_query_builder.php');
 
 class AuthClass{
     
@@ -11,7 +11,7 @@ class AuthClass{
         $this->dbConnection = new \DB_Access();
     }
 
-    public static function clearRequest(){
+    public function clearRequest(){
         $cleanedData = [];
         foreach ($_POST as $name => $field){
            $cleanedData[$name] = trim(htmlentities($field));
@@ -26,8 +26,7 @@ class AuthClass{
     public static function checkUserIsset($login){
         $connection = new \DB_Access();
         $queryString = $connection->buildSelectQuery('user', 'Id', "Login = '$login'");
-        $dbResult = $connection->query($queryString);
-        $connection->closeConnection();
+        $dbResult = $connection->query($queryString);    
         if ($dbResult->num_rows > 0){
             return true;
         }

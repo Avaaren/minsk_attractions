@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors',1);
 ini_set('error_reporting', E_ALL);
-require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/services/db_layer/db_query_builder.php');
 require_once 'AuthClass.php';
 
 class Registration extends Auth\AuthClass{
@@ -30,7 +30,7 @@ class Registration extends Auth\AuthClass{
         $connection->closeConnection();
     }
 
-    function handleReistration(){
+    function registrationRequestHandler(){
         $cleanedData = parent::clearRequest();
         if (parent::checkUserIsset($cleanedData['login'])){
             $this->errors[] = "Такой пользователь уже существует";
