@@ -1,14 +1,13 @@
 <?php
-session_start();
 ini_set('display_errors',1);
 ini_set('error_reporting', E_ALL);
 require_once 'AuthClass.php';
-require_once($_SERVER['DOCUMENT_ROOT'].'/minsk_attractions/backend/services/db_layer/db_query_builder.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/services/db_layer/db_query_builder.php');
 
 class Login extends Auth\AuthClass {
 
     function loginRequestHandler(){
-        $cleanedData = parent::clearRequest($_POST);
+        $cleanedData = parent::clearRequest();
         $isUserIsset = parent::checkUserIsset($cleanedData['login']);
 
         if ( !$isUserIsset ){
