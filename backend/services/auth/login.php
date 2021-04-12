@@ -1,4 +1,5 @@
 <?php
+session_start();
 ini_set('display_errors',1);
 ini_set('error_reporting', E_ALL);
 require_once 'AuthClass.php';
@@ -17,7 +18,12 @@ class Login extends Auth\AuthClass {
 
         if ( $this->checkUserCredentials($cleanedData['login'], $cleanedData['password']) ){
             $this->loginUser($cleanedData['login']);
+
+            if ($_SESSION['is_auth']){
+                return true;
+            }
         }
+        return false;
     }
 
     function loginUser($login){

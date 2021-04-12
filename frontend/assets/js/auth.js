@@ -1,7 +1,6 @@
 $(document).ready(function(){
     $('#registration-form').on("submit", function(event){
         event.preventDefault();
-        console.log(formValues);
         $.ajax({
             type: 'post',
             url: '/minsk_attractions/backend/services/auth/registrationHandler.php',
@@ -11,9 +10,17 @@ $(document).ready(function(){
                 "password" : $('#registration-password').val(),
                 "repeatPassword" : $('#registration-confirm-password').val(),
             },
-            success: function (data) {
-                $('body').append(data);
-                $('.popap--blackout, .popap--video').addClass('active');
+            success: function (response) {
+                var jsonData = JSON.parse(response);
+                console.log(jsonData);
+                if (jsonData.errors.length > 0){
+                    jsonData.errors.forEach(error => {
+                        alert(error);
+                    });
+                }
+                else{
+                    window.location.href = "/";
+                }
             }
         });
     });
@@ -27,9 +34,17 @@ $(document).ready(function(){
                 "login" : $('#login').val(),
                 "password" : $('#login-password').val(),
             },
-            success: function (data) {
-                $('body').append(data);
-                $('.popap--blackout, .popap--video').addClass('active');
+            success: function (response) {
+                var jsonData = JSON.parse(response);
+                console.log(jsonData);
+                if (jsonData.errors.length > 0){
+                    jsonData.errors.forEach(error => {
+                        alert(error);
+                    });
+                }
+                else{
+                    window.location.href = "/minsk_attractions/backend/";
+                }
             }
         });
     });
